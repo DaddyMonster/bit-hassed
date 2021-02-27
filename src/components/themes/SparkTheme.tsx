@@ -7,7 +7,11 @@ import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import React from "react";
 import defaultTheme from "../../styles/theme";
 
-const SparkTheme: React.FC = ({ children }) => {
+interface Props {
+  children: React.ReactNode;
+}
+
+const SparkTheme = ({ children }: Props) => {
   return (
     <StyledEngineProvider injectFirst>
       <MuiThemeProvider theme={defaultTheme}>

@@ -1,6 +1,6 @@
 import { Chip } from "@material-ui/core";
 import React from "react";
-import { JustButtonC, JustButtonT } from "../components/buttons";
+import { JustButtonC, JustButtonT } from "../components/atoms/buttons";
 import RootLayout from "../layouts/RootLayout";
 
 interface Props {}

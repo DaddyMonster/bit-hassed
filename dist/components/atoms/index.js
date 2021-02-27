@@ -20,19 +20,11 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 
 };
 
-var __importDefault = (this && this.__importDefault) || function (mod) {
-
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-
-};
-
 Object.defineProperty(exports, "__esModule", { value: true });
 
-exports.SparkTheme = void 0;
+__exportStar(require("./buttons/JustButtonC"), exports);
 
-var SparkTheme_1 = require("./SparkTheme");
+__exportStar(require("./buttons/JustButtonT"), exports);
 
-Object.defineProperty(exports, "SparkTheme", { enumerable: true, get: function () { return __importDefault(SparkTheme_1).default; } });
-
-__exportStar(require("./withSparkTheme"), exports);
+__exportStar(require("./typos/JustTypo"), exports);
 

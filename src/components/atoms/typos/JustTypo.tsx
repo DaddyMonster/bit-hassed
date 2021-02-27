@@ -1,9 +1,9 @@
 import { Typography, TypographyProps } from "@material-ui/core";
 import React from "react";
-import { TypoUnion } from "../../styles/theme/typo.override";
+import { TypoUnion } from "../../../styles/theme/typo.override";
 import styled from "styled-components";
-import { ColorOptionUnion } from "../../styles/theme/palette.override";
-import { withSparkTheme } from "../themes/withSparkTheme";
+import { ColorOptionUnion } from "../../../styles/theme/palette.override";
+import { withSparkTheme } from "../../themes/withSparkTheme";
 
 export type JustTypoSizeOption =
   | "4xl"

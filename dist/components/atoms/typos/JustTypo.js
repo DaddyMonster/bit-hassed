@@ -52,6 +52,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 
+exports.JustTypo = void 0;
+
 var jsx_runtime_1 = require("react/jsx-runtime");
 
 var core_1 = require("@material-ui/core");
@@ -82,15 +84,13 @@ var typoOptionObj = {
 
 };
 
-var JustTypo = withSparkTheme_1.withSparkTheme(function (_a) {
+exports.JustTypo = withSparkTheme_1.withSparkTheme(function (_a) {
 
     var children = _a.children, props = __rest(_a, ["children"]);
 
     return jsx_runtime_1.jsx(Typo, __assign({}, props, { children: children }), void 0);
 
 });
-
-exports.default = JustTypo;
 
 var Typo = styled_components_1.default(core_1.Typography)(function (_a) {
 

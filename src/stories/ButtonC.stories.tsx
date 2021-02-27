@@ -1,9 +1,10 @@
 import React from "react";
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Story, Meta } from "@storybook/react/types-6-0";
-import JustButtonC, {
+import {
+  JustButtonC,
   JustButtonCProps,
-} from "../components/buttons/JustButtonC";
+} from "../components/atoms/buttons/JustButtonC";
 
 export default {
   title: "Example/ButtonC",

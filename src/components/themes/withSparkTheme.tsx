@@ -10,3 +10,4 @@ export function withSparkTheme<T>(Component: ComponentType<T>) {
     );
   };
 }
+

@@ -2,6 +2,8 @@
 
 Object.defineProperty(exports, "__esModule", { value: true });
 
+exports.findClosestIndex = void 0;
+
 function findClosestIndex(_a) {
 
     var collection = _a.collection, target = _a.target, filterMapFn = _a.filterMapFn;
@@ -92,5 +94,5 @@ function findClosestIndex(_a) {
 
 }
 
-exports.default = findClosestIndex;
+exports.findClosestIndex = findClosestIndex;
 

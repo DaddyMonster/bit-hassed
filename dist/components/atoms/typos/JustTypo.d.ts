@@ -24,7 +24,7 @@ export interface JustTypoProps extends TypographyProps, BaseProps {
 
 }
 
-declare const JustTypo: (props: JustTypoProps) => JSX.Element;
+export declare const JustTypo: (props: JustTypoProps) => JSX.Element;
 
-export default JustTypo;
+export {};
 

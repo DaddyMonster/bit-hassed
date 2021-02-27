@@ -1,6 +1,12 @@
 import React from "react";
 
-declare const SparkTheme: React.FC;
+interface Props {
+
+    children: React.ReactNode;
+
+}
+
+declare const SparkTheme: ({ children }: Props) => JSX.Element;
 
 export default SparkTheme;
 

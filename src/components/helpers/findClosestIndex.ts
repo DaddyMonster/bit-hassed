@@ -13,7 +13,11 @@ interface Args<T> {
   filterMapFn?: FilterMapFn<T>;
 }
 
-function findClosestIndex<T>({ collection, target, filterMapFn }: Args<T>) {
+export function findClosestIndex<T>({
+  collection,
+  target,
+  filterMapFn,
+}: Args<T>) {
   let closest = {
     index: -1,
     distance: Number.POSITIVE_INFINITY,
@@ -67,5 +71,3 @@ function findClosestIndex<T>({ collection, target, filterMapFn }: Args<T>) {
 
   return closest.index;
 }
-
-export default findClosestIndex;

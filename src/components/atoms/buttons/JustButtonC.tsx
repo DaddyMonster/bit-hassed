@@ -1,9 +1,9 @@
 import { Button, ButtonProps } from "@material-ui/core";
 import React from "react";
 import styled from "styled-components";
-import { ColorOptionUnion } from "../../styles/theme/palette.override";
-import { TypoUnion } from "../../styles/theme/typo.override";
-import { withSparkTheme } from "../themes/withSparkTheme";
+import { ColorOptionUnion } from "../../../styles/theme/palette.override";
+import { TypoUnion } from "../../../styles/theme/typo.override";
+import { withSparkTheme } from "../../themes/withSparkTheme";
 
 export interface BtnBaseProps {
   ft?: string | number;

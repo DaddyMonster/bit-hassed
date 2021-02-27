@@ -1,4 +1,4 @@
-export * as SparkTheme from "./SparkTheme";
+export { default as SparkTheme } from "./SparkTheme";
 
-export * as withSparkTheme from "./withSparkTheme";
+export * from "./withSparkTheme";
 

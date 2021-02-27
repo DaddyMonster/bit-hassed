@@ -18,7 +18,7 @@ interface Args<T> {
 
 }
 
-declare function findClosestIndex<T>({ collection, target, filterMapFn }: Args<T>): number;
+export declare function findClosestIndex<T>({ collection, target, filterMapFn, }: Args<T>): number;
 
-export default findClosestIndex;
+export {};
 
