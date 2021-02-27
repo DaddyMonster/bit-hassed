@@ -1,30 +1,40 @@
-import { alpha } from "@material-ui/core";
+"use strict";
 
-export const createGradient = (theme) => {
+Object.defineProperty(exports, "__esModule", { value: true });
 
-    return function (ops, dir = "to right") {
+exports.palettes = exports.createGradient = void 0;
 
-        const stringifiedArr = ops.map((x, i) => {
+var core_1 = require("@material-ui/core");
 
-            const { color: _color, op = 1, perc = "50%" } = x;
+var createGradient = function (theme) {
 
-            const color = op < 1
+    return function (ops, dir) {
 
-                ? alpha(theme.palette[_color].main, op)
+        if (dir === void 0) { dir = "to right"; }
+
+        var stringifiedArr = ops.map(function (x, i) {
+
+            var _color = x.color, _a = x.op, op = _a === void 0 ? 1 : _a, _b = x.perc, perc = _b === void 0 ? "50%" : _b;
+
+            var color = op < 1
+
+                ? core_1.alpha(theme.palette[_color].main, op)
 
                 : theme.palette[_color].main;
 
-            return `${color}${i === ops.length - 1 ? "" : ","} ${perc}`;
+            return "" + color + (i === ops.length - 1 ? "" : ",") + " " + perc;
 
         });
 
-        return `linear-gradient(${dir}, ${stringifiedArr.join(" ")} )`;
+        return "linear-gradient(" + dir + ", " + stringifiedArr.join(" ") + " )";
 
     };
 
 };
 
-export const palettes = {
+exports.createGradient = createGradient;
+
+exports.palettes = {
 
     primary: { main: "#B380AA" },
 
@@ -44,11 +54,11 @@ export const palettes = {
 
 };
 
-const customPalatte = Object.assign(palettes, {
+var customPalatte = Object.assign(exports.palettes, {
 
-    gradient: createGradient,
+    gradient: exports.createGradient,
 
 });
 
-export default customPalatte;
+exports.default = customPalatte;
 

@@ -1,5 +1,3 @@
-import "../../styles/fonts.css";
-import "../../styles/index.css";
 import {
   StyledEngineProvider,
   MuiThemeProvider,

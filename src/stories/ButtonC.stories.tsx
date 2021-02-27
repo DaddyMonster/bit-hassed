@@ -3,7 +3,7 @@ import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import JustButtonC, {
   JustButtonCProps,
-} from "../components/atoms/buttons/JustButtonC";
+} from "../components/buttons/JustButtonC";
 
 export default {
   title: "Example/ButtonC",

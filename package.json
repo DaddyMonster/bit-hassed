@@ -72,6 +72,8 @@
           "rawConfig": {
             "tsconfig": {
               "compilerOptions": {
+                "target": "ES5",
+                "module": "CommonJS",
                 "skipLibCheck": true,
                 "typeRoots": [
                   "./src/typed"

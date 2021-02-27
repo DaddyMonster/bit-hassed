@@ -1,6 +1,12 @@
-function findClosestIndex({ collection, target, filterMapFn }) {
+"use strict";
 
-    let closest = {
+Object.defineProperty(exports, "__esModule", { value: true });
+
+function findClosestIndex(_a) {
+
+    var collection = _a.collection, target = _a.target, filterMapFn = _a.filterMapFn;
+
+    var closest = {
 
         index: -1,
 
@@ -10,21 +16,21 @@ function findClosestIndex({ collection, target, filterMapFn }) {
 
     };
 
-    for (let index = 0; index < collection.length; index++) {
+    for (var index = 0; index < collection.length; index++) {
 
-        const rawValue = collection[index];
+        var rawValue = collection[index];
 
-        let value;
+        var value = void 0;
 
         if (filterMapFn) {
 
-            const mappedValue = filterMapFn(rawValue, {
+            var mappedValue = filterMapFn(rawValue, {
 
-                index,
+                index: index,
 
-                target,
+                target: target,
 
-                collection,
+                collection: collection,
 
             });
 
@@ -38,7 +44,7 @@ function findClosestIndex({ collection, target, filterMapFn }) {
 
                     if (typeof rawValue !== "number") {
 
-                        throw new TypeError(`\`filterMapFn\` returned \`true\` for non-number value \`${rawValue}\`.`);
+                        throw new TypeError("`filterMapFn` returned `true` for non-number value `" + rawValue + "`.");
 
                     }
 
@@ -58,7 +64,7 @@ function findClosestIndex({ collection, target, filterMapFn }) {
 
             if (typeof rawValue !== "number") {
 
-                throw new TypeError(`Array contains non-number value \`${rawValue}\` without a \`filterMapFn\` to map it to a number.`);
+                throw new TypeError("Array contains non-number value `" + rawValue + "` without a `filterMapFn` to map it to a number.");
 
             }
 
@@ -66,7 +72,7 @@ function findClosestIndex({ collection, target, filterMapFn }) {
 
         }
 
-        const distance = Math.abs(value - target);
+        var distance = Math.abs(value - target);
 
         if (distance === 0) {
 
@@ -76,7 +82,7 @@ function findClosestIndex({ collection, target, filterMapFn }) {
 
         if (distance < closest.distance) {
 
-            closest = { index, distance, value };
+            closest = { index: index, distance: distance, value: value };
 
         }
 
@@ -86,5 +92,5 @@ function findClosestIndex({ collection, target, filterMapFn }) {
 
 }
 
-export default findClosestIndex;
+exports.default = findClosestIndex;
 

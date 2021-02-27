@@ -1,4 +1,4 @@
-import defaultTheme from '@bit/styles.theme';
+import defaultTheme from '@bit/hessed.engspark.theme';
 
 export default defaultTheme;
 

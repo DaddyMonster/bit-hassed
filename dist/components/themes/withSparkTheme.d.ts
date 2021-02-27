@@ -1,4 +1,4 @@
-import { ComponentType } from "react";
+import { withSparkTheme } from '@bit/hessed.engspark.themes/dist/components/themes/withSparkTheme';
 
-export declare function withSparkTheme<T>(Component: ComponentType<T>): (props: T) => JSX.Element;
+export { withSparkTheme };
 

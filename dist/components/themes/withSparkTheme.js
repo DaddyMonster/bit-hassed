@@ -1,14 +1,10 @@
-import { jsx as _jsx } from "react/jsx-runtime";
+"use strict";
 
-import SparkTheme from "./SparkTheme";
+Object.defineProperty(exports, "__esModule", { value: true });
 
-export function withSparkTheme(Component) {
+exports.withSparkTheme = void 0;
 
-    return function (props) {
+var withSparkTheme_1 = require("@bit/hessed.engspark.themes/dist/components/themes/withSparkTheme");
 
-        return (_jsx(SparkTheme, { children: _jsx(Component, Object.assign({}, props), void 0) }, void 0));
-
-    };
-
-}
+Object.defineProperty(exports, "withSparkTheme", { enumerable: true, get: function () { return withSparkTheme_1.withSparkTheme; } });
 

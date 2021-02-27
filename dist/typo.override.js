@@ -1,4 +1,8 @@
-const typoOptions = {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+
+var typoOptions = {
 
     logo: "S-CoreDream-9Black, 'Roboto'",
 
@@ -16,5 +20,5 @@ const typoOptions = {
 
 };
 
-export default typoOptions;
+exports.default = typoOptions;
 

@@ -1,4 +1,4 @@
-import { TypoUnion } from '@bit/styles.theme/dist/typo.override';
+import { TypoUnion } from '@bit/hessed.engspark.theme/dist/typo.override';
 
 export { TypoUnion };
 

@@ -1,20 +1,50 @@
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+"use strict";
 
-import "../../styles/fonts.css";
+var __assign = (this && this.__assign) || function () {
 
-import "../../styles/index.css";
+    __assign = Object.assign || function(t) {
 
-import { StyledEngineProvider, MuiThemeProvider, CssBaseline, } from "@material-ui/core";
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
 
-import { ThemeProvider as StyledThemeProvider } from "styled-components";
+            s = arguments[i];
 
-import defaultTheme from "../../styles/theme";
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
 
-const SparkTheme = ({ children }) => {
+                t[p] = s[p];
 
-    return (_jsx(StyledEngineProvider, Object.assign({ injectFirst: true }, { children: _jsx(MuiThemeProvider, Object.assign({ theme: defaultTheme }, { children: _jsxs(StyledThemeProvider, Object.assign({ theme: defaultTheme }, { children: [_jsx(CssBaseline, {}, void 0), children] }), void 0) }), void 0) }), void 0));
+        }
+
+        return t;
+
+    };
+
+    return __assign.apply(this, arguments);
 
 };
 
-export default SparkTheme;
+var __importDefault = (this && this.__importDefault) || function (mod) {
+
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+
+};
+
+Object.defineProperty(exports, "__esModule", { value: true });
+
+var jsx_runtime_1 = require("react/jsx-runtime");
+
+var core_1 = require("@material-ui/core");
+
+var styled_components_1 = require("styled-components");
+
+var theme_1 = __importDefault(require("../../styles/theme"));
+
+var SparkTheme = function (_a) {
+
+    var children = _a.children;
+
+    return (jsx_runtime_1.jsx(core_1.StyledEngineProvider, __assign({ injectFirst: true }, { children: jsx_runtime_1.jsx(core_1.MuiThemeProvider, __assign({ theme: theme_1.default }, { children: jsx_runtime_1.jsxs(styled_components_1.ThemeProvider, __assign({ theme: theme_1.default }, { children: [jsx_runtime_1.jsx(core_1.CssBaseline, {}, void 0), children] }), void 0) }), void 0) }), void 0));
+
+};
+
+exports.default = SparkTheme;
 

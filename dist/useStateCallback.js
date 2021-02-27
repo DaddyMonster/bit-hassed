@@ -1,12 +1,16 @@
-import { useState, useEffect, useRef } from "react";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+
+var react_1 = require("react");
 
 function useStateCallback(initialState) {
 
-    const [state, setstate] = useState(initialState);
+    var _a = react_1.useState(initialState), state = _a[0], setstate = _a[1];
 
-    const callbackRef = useRef(null);
+    var callbackRef = react_1.useRef(null);
 
-    const setStateCallback = (state, callback) => {
+    var setStateCallback = function (state, callback) {
 
         if (callback) {
 
@@ -24,7 +28,7 @@ function useStateCallback(initialState) {
 
     };
 
-    useEffect(() => {
+    react_1.useEffect(function () {
 
         if (callbackRef.current) {
 
@@ -40,5 +44,5 @@ function useStateCallback(initialState) {
 
 }
 
-export default useStateCallback;
+exports.default = useStateCallback;
 

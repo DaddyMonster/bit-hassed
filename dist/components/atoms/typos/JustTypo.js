@@ -1,3 +1,27 @@
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+
+    __assign = Object.assign || function(t) {
+
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+
+            s = arguments[i];
+
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+
+                t[p] = s[p];
+
+        }
+
+        return t;
+
+    };
+
+    return __assign.apply(this, arguments);
+
+};
+
 var __rest = (this && this.__rest) || function (s, e) {
 
     var t = {};
@@ -20,15 +44,23 @@ var __rest = (this && this.__rest) || function (s, e) {
 
 };
 
-import { jsx as _jsx } from "react/jsx-runtime";
+var __importDefault = (this && this.__importDefault) || function (mod) {
 
-import { Typography } from "@material-ui/core";
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 
-import styled from "styled-components";
+};
 
-import { withSparkTheme } from "../../themes/withSparkTheme";
+Object.defineProperty(exports, "__esModule", { value: true });
 
-const typoOptionObj = {
+var jsx_runtime_1 = require("react/jsx-runtime");
+
+var core_1 = require("@material-ui/core");
+
+var styled_components_1 = __importDefault(require("styled-components"));
+
+var withSparkTheme_1 = require("../../themes/withSparkTheme");
+
+var typoOptionObj = {
 
     "4xl": "2.5rem",
 
@@ -50,19 +82,21 @@ const typoOptionObj = {
 
 };
 
-const JustTypo = withSparkTheme((_a) => {
+var JustTypo = withSparkTheme_1.withSparkTheme(function (_a) {
 
-    var { children } = _a, props = __rest(_a, ["children"]);
+    var children = _a.children, props = __rest(_a, ["children"]);
 
-    return _jsx(Typo, Object.assign({}, props, { children: children }), void 0);
+    return jsx_runtime_1.jsx(Typo, __assign({}, props, { children: children }), void 0);
 
 });
 
-export default JustTypo;
+exports.default = JustTypo;
 
-const Typo = styled(Typography)(({ theme, ft, ff = "text", col, colUni, sz }) => {
+var Typo = styled_components_1.default(core_1.Typography)(function (_a) {
 
-    const color = colUni
+    var theme = _a.theme, ft = _a.ft, _b = _a.ff, ff = _b === void 0 ? "text" : _b, col = _a.col, colUni = _a.colUni, sz = _a.sz;
+
+    var color = colUni
 
         ? theme.palette[colUni].main
 
@@ -72,13 +106,13 @@ const Typo = styled(Typography)(({ theme, ft, ff = "text", col, colUni, sz }) =>
 
             : theme.palette.default.main;
 
-    const fontSize = sz ? typoOptionObj[sz] : ft ? ft : "1rem";
+    var fontSize = sz ? typoOptionObj[sz] : ft ? ft : "1rem";
 
     return {
 
-        color,
+        color: color,
 
-        fontSize,
+        fontSize: fontSize,
 
         fontFamily: theme.typography.fontFam[ff],
 
