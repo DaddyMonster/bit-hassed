@@ -7,16 +7,7 @@ const typoOptions = {
   pretty: "S-CoreDream-2ExtraLight, 'Roboto'",
   pretty2: "'Open Sans Condensed', 'sans-serif'",
 };
-type TypoOptionsType = typeof typoOptions;
+export type TypoOptionsType = typeof typoOptions;
 export type TypoUnion = keyof TypoOptionsType;
-
-declare module "@material-ui/core/styles/createTypography" {
-  interface TypographyOptions {
-    fontFam: TypoOptionsType;
-  }
-  interface Typography {
-    fontFam: TypoOptionsType;
-  }
-}
 
 export default typoOptions;

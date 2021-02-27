@@ -1,4 +1,2 @@
-import JustButtonC from "./JustButtonC";
-import JustButtonT from "./JustButtonT";
-
-export default { JustButtonC, JustButtonT };
+export * from "./JustButtonC";
+export * from "./JustButtonT";

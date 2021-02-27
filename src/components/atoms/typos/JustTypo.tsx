@@ -3,6 +3,7 @@ import React from "react";
 import { TypoUnion } from "../../../styles/theme/typo.override";
 import styled from "styled-components";
 import { ColorOptionUnion } from "../../../styles/theme/palette.override";
+import { withSparkTheme } from "../../themes/withSparkTheme";
 
 export type JustTypoSizeOption =
   | "4xl"
@@ -40,9 +41,9 @@ interface BaseProps {
 
 export interface JustTypoProps extends TypographyProps, BaseProps {}
 
-const JustTypo = ({ children, ...props }: JustTypoProps) => {
+const JustTypo = withSparkTheme(({ children, ...props }: JustTypoProps) => {
   return <Typo {...props}>{children}</Typo>;
-};
+});
 
 export default JustTypo;
 

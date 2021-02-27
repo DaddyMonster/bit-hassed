@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { ColorOptionUnion } from "../../../styles/theme/palette.override";
 import { TypoUnion } from "../../../styles/theme/typo.override";
+import { withSparkTheme } from "../../themes/withSparkTheme";
 
 export interface BtnBaseProps {
   ft?: string | number;
@@ -18,11 +19,11 @@ export interface JustButtonCProps
   extends Omit<ButtonProps, "variant">,
     ElemProps {}
 
-const JustButtonC = ({ children, ...props }: JustButtonCProps) => {
-  return <CotainedBtn {...props}>{children}</CotainedBtn>;
-};
-
-export default JustButtonC;
+export const JustButtonC = withSparkTheme(
+  ({ children, ...props }: JustButtonCProps) => {
+    return <CotainedBtn {...props}>{children}</CotainedBtn>;
+  }
+);
 
 const CotainedBtn = styled(Button).attrs({
   variant: "contained",
