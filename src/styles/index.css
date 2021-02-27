@@ -1,0 +1,34 @@
+@tailwind base;
+
+@tailwind components;
+
+/* CUSTOM STYLES  HERE*/
+
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-3xl font-logo;
+  }
+  h2 {
+    @apply text-2xl font-logo;
+  }
+  h3 {
+    @apply text-xl font-menu;
+  }
+  h4 {
+    @apply text-lg font-menu;
+  }
+  h5 {
+    @apply text-lg font-guide;
+  }
+  h6 {
+    @apply font-guide;
+  }
+  p {
+    @apply font-text;
+  }
+  span {
+    @apply font-guide;
+  }
+}
