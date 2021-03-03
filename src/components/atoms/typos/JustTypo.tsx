@@ -19,7 +19,7 @@ type JustTypoObj = {
   [key in JustTypoSizeOption]: string;
 };
 
-const typoOptionObj: JustTypoObj = {
+export const typoOptionObj: JustTypoObj = {
   "4xl": "2.5rem",
   "3xl": "2rem",
   "2xl": "1.7rem",
