@@ -6,17 +6,25 @@ import {
 } from "@material-ui/core";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import defaultTheme from "./styles/theme";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import Buttons from "./pages/Buttons";
 import Typos from "./pages/Typos";
 import Cards from "./pages/Cards";
 import Home from "./pages";
-import Nav from "./layouts/Nav";
+
+import AppLayout from "./pages/AppLayout";
+
+export interface NavProps {
+  path: string;
+  label: string;
+}
+
+const navProps: NavProps[] = [
+  { path: "/home", label: "Home" },
+  { path: "/buttons", label: "버튼" },
+  { path: "/cards", label: "카드" },
+  { path: "/typos", label: "타이포" },
+];
 
 function App() {
   return (
@@ -24,8 +32,7 @@ function App() {
       <MuiThemeProvider theme={defaultTheme}>
         <StyledThemeProvider theme={defaultTheme}>
           <CssBaseline />
-          <Router>
-            <Nav />
+          <AppLayout navProps={navProps}>
             <Switch>
               <Route exact path="/home" component={Home} />
               <Route exact path="/buttons" component={Buttons} />
@@ -33,11 +40,11 @@ function App() {
               <Route exact path="/typos" component={Typos} />
               <Redirect exact from="/" to="/home" />
             </Switch>
-          </Router>
+          </AppLayout>
         </StyledThemeProvider>
       </MuiThemeProvider>
     </StyledEngineProvider>
   );
 }
 
-export default App;
+export default withRouter(App);

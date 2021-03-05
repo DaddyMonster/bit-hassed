@@ -37,6 +37,7 @@ interface BaseProps {
   colUni?: ColorOptionUnion;
   col?: string;
   sz?: JustTypoSizeOption;
+  grey?: 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
 }
 
 export interface JustTypoProps extends TypographyProps, BaseProps {}
@@ -48,8 +49,10 @@ export const JustTypo = withSparkTheme(
 );
 
 const Typo = styled(Typography)<BaseProps>(
-  ({ theme, ft, ff = "text", col, colUni, sz }) => {
-    const color = colUni
+  ({ theme, ft, ff = "text", col, colUni, sz, grey }) => {
+    const color = grey
+      ? theme.palette.grey[grey]
+      : colUni
       ? theme.palette[colUni].main
       : col
       ? col
