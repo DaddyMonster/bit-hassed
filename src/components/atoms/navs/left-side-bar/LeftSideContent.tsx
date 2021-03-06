@@ -44,6 +44,7 @@ export function LeftSideContent<
         <Scrollbar>
           {listItems.map((item) => (
             <SideNavItem
+              key={item.label}
               label={item.label}
               onClick={(e) => item.onClick(e, item.onClickArg)}
             />

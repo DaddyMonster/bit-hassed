@@ -5,9 +5,9 @@ import { JustButtonT, JustTypo } from "../..";
 
 export interface UserInfoT<_RoleType_> {
   id: number;
-  name: string;
+  username: string;
   role: keyof _RoleType_;
-  academyName: string;
+  academyId: string;
   thumbUrl?: string;
 }
 
@@ -37,14 +37,14 @@ export function LiteUserInfo<
       {userInfo ? (
         <div className="flex items-center h-full" onClick={onUserAction}>
           <UserAvatar src={userInfo.thumbUrl}>
-            {userInfo.thumbUrl ? undefined : userInfo.name.slice(0, 1)}
+            {userInfo.thumbUrl ? undefined : userInfo.username.slice(0, 1)}
           </UserAvatar>
           <div className="flex flex-col justify-center items-center">
-            <JustTypo ff="guide" className="px-3 mt-1">{`${userInfo.name} ${
+            <JustTypo ff="guide" className="px-3 mt-1">{`${userInfo.username} ${
               roleMap[userInfo.role]
             }`}</JustTypo>
             <JustTypo ff="guide" sz="xs" grey={500}>
-              {userInfo.academyName}
+              {userInfo.academyId}
             </JustTypo>
           </div>
         </div>

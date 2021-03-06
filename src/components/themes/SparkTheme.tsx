@@ -11,7 +11,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-const SparkTheme = ({ children }: Props) => {
+export const SparkTheme = ({ children }: Props) => {
   return (
     <StyledEngineProvider injectFirst>
       <MuiThemeProvider theme={defaultTheme}>
@@ -23,5 +23,3 @@ const SparkTheme = ({ children }: Props) => {
     </StyledEngineProvider>
   );
 };
-
-export default SparkTheme;

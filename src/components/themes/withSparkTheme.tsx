@@ -1,5 +1,5 @@
 import { ComponentType } from "react";
-import SparkTheme from "./SparkTheme";
+import {SparkTheme} from "./SparkTheme";
 
 export function withSparkTheme<T>(Component: ComponentType<T>) {
   return function (props: T) {

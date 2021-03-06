@@ -19,30 +19,33 @@ export const MainLogo = ({
 }: MainLogoProps) => {
   return (
     <div className="h-full flex justify-center items-center">
-      <LogoTypo colUni={mainColUni} sizeInRem={size}>
+      <LogoTypo colUni={mainColUni} $sizeInRem={size}>
         {mainText}
-        {showSub && <LogoSubTypo sizeInRem={size}>{subText}</LogoSubTypo>}
+        {showSub && <LogoSubTypo $sizeInRem={size}>{subText}</LogoSubTypo>}
       </LogoTypo>
     </div>
   );
 };
 
-export const LogoTypo = styled(JustTypo).attrs({ ff: "logo", sz: "2xl" })<{
+export const LogoTypo = styled(JustTypo).attrs({
+  as: "span",
+})<{
   colUni: ColorOptionUnion;
-  sizeInRem?: number;
-}>(({ theme, colUni, sizeInRem = 1.7 }) => ({
+  $sizeInRem?: number;
+}>(({ theme, colUni, $sizeInRem = 1.7 }) => ({
+  fontFamily: theme.typography.fontFam.logo,
   color: theme.palette[colUni].main,
-  fontSize: sizeInRem + "rem",
+  fontSize: $sizeInRem + "rem",
   position: "relative",
   display: "inline-block",
   marginBottom: 15,
 }));
 
 export const LogoSubTypo = styled(JustTypo).attrs({ ff: "pretty2", sz: "xs" })<{
-  sizeInRem?: number;
-}>(({ theme, sizeInRem }) => ({
+  $sizeInRem?: number;
+}>(({ theme, $sizeInRem }) => ({
   color: theme.palette.black.main,
-  fontSize: sizeInRem ? sizeInRem - 1 + "rem" : "0.8rem",
+  fontSize: $sizeInRem ? $sizeInRem - 1 + "rem" : "0.8rem",
   fontWeight: "bold",
   position: "absolute",
   right: 0,

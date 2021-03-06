@@ -50,7 +50,7 @@ const Root = styled.div({
   display: "flex",
 });
 
-const MotionPaper = motion.custom(Paper);
+const MotionPaper = motion(Paper);
 const LeftSideOuter = styled(MotionPaper)(({ theme }) => ({
   height: "100%",
   boxShadow: theme.shadows[1],

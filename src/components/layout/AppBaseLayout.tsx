@@ -54,6 +54,7 @@ export const AppBaseLayout: LayoutBaseComponent = ({
           <TopNavTab selected={navValue} onChange={(val) => onNavChange(val)}>
             {navProps.map((item) => (
               <TopNavTabItems
+                key={item.path}
                 value={(item.base ?? "") + item.path}
                 label={item.label}
               />

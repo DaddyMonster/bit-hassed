@@ -1,11 +1,11 @@
+import { red } from "@material-ui/core/colors";
 import React, { useState } from "react";
+import { FaAccusoft } from "react-icons/fa";
 import { useHistory, useLocation } from "react-router";
 import { NavProps } from "../App";
 import { MainLogoProps } from "../components/atoms/logos";
 import { LeftSideContent } from "../components/atoms/navs";
 import { AppWithSidebars } from "../components/layout/AppWithSidebar";
-import { FaAccusoft } from "react-icons/fa";
-import { red } from "@material-ui/core/colors";
 interface Props {
   navProps: NavProps[];
 }
@@ -35,7 +35,7 @@ const AppLayout: React.FC<Props> = ({ children, navProps }) => {
   const { pathname } = useLocation();
   const { push } = useHistory();
 
-  const [logInfo, setlogInfo] = useState<LogMock | null>(null);
+  const [logInfo] = useState<LogMock | null>(null);
 
   const baseLayoutProps = {
     logoProps,
