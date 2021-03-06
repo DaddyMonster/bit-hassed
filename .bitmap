@@ -115,7 +115,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "hessed.engspark/layout@0.0.1": {
+    "hessed.engspark/layout@0.0.2": {
         "files": [
             {
                 "relativePath": "src/components/layout/AppBaseLayout.tsx",

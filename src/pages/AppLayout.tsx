@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { useHistory, useLocation } from "react-router";
 import { NavProps } from "../App";
 import { MainLogoProps } from "../components/atoms/logos";
-import AppBaseLayout from "../components/layout/AppBaseLayout";
-
+import { LeftSideContent } from "../components/atoms/navs";
+import { AppWithSidebars } from "../components/layout/AppWithSidebar";
+import { FaAccusoft } from "react-icons/fa";
+import { red } from "@material-ui/core/colors";
 interface Props {
   navProps: NavProps[];
 }
@@ -35,26 +37,37 @@ const AppLayout: React.FC<Props> = ({ children, navProps }) => {
 
   const [logInfo, setlogInfo] = useState<LogMock | null>(null);
 
+  const baseLayoutProps = {
+    logoProps,
+    navProps,
+    navValue: pathname,
+    onLogin: () => {},
+    onNavChange: push,
+    roleMap: roleInfo,
+    userInfo: logInfo,
+    onUserAction: () => {},
+  };
+
   return (
     <div className="w-full">
-      <AppBaseLayout
-        logoProps={logoProps}
-        onLogin={() => {
-          setlogInfo({
-            id: 1,
-            name: "Dan",
-            role: "student",
-            academyName: "Dan's English",
-          });
-        }}
-        navProps={navProps}
-        navValue={pathname}
-        onNavChange={push}
-        roleMap={roleInfo}
-        userInfo={logInfo}
+      <AppWithSidebars
+        baseLayoutProps={baseLayoutProps}
+        LeftSidebarElement={() => (
+          <LeftSideContent
+            headerProps={{
+              Icon: FaAccusoft,
+              iconProps: { fill: red[300], fontSize: "2rem" },
+              label: "Curriculum",
+            }}
+            listItems={[
+              { label: "Sori Breaker", onClick: () => {}, onClickArg: "hi" },
+              { label: "단어 뽀개기", onClick: () => {}, onClickArg: "Vocab" },
+            ]}
+          />
+        )}
       >
         {children}
-      </AppBaseLayout>
+      </AppWithSidebars>
     </div>
   );
 };

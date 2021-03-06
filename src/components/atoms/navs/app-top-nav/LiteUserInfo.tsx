@@ -19,6 +19,7 @@ export interface LiteUserInfoProps<
   className?: string;
   userInfo: _UserInfo_ | null;
   roleMap: _RoleType_;
+  onUserAction: (e: React.MouseEvent) => void;
 }
 
 export function LiteUserInfo<
@@ -29,11 +30,12 @@ export function LiteUserInfo<
   className,
   userInfo,
   roleMap,
+  onUserAction,
 }: LiteUserInfoProps<_RoleType_, _UserInfo_>) {
   return (
     <Root className={className}>
       {userInfo ? (
-        <div className="flex items-center h-full">
+        <div className="flex items-center h-full" onClick={onUserAction}>
           <UserAvatar src={userInfo.thumbUrl}>
             {userInfo.thumbUrl ? undefined : userInfo.name.slice(0, 1)}
           </UserAvatar>

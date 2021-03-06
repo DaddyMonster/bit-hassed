@@ -30,7 +30,7 @@ export const MainLogo = ({
 export const LogoTypo = styled(JustTypo).attrs({ ff: "logo", sz: "2xl" })<{
   colUni: ColorOptionUnion;
   sizeInRem?: number;
-}>(({ theme, colUni, sizeInRem = 1.5 }) => ({
+}>(({ theme, colUni, sizeInRem = 1.7 }) => ({
   color: theme.palette[colUni].main,
   fontSize: sizeInRem + "rem",
   position: "relative",
@@ -42,7 +42,7 @@ export const LogoSubTypo = styled(JustTypo).attrs({ ff: "pretty2", sz: "xs" })<{
   sizeInRem?: number;
 }>(({ theme, sizeInRem }) => ({
   color: theme.palette.black.main,
-  fontSize: sizeInRem ? sizeInRem - 1 + "rem" : "0.7rem",
+  fontSize: sizeInRem ? sizeInRem - 1 + "rem" : "0.8rem",
   fontWeight: "bold",
   position: "absolute",
   right: 0,

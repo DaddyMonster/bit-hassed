@@ -11,10 +11,22 @@ import {
   UserInfoT,
 } from "../atoms/navs";
 
-interface Props<
-  _RoleType_,
-  _UserInfo_ extends UserInfoT<_RoleType_>,
-  _NavProps_ extends NavBaseProps
+interface BaseRoleType {
+  teacher: string;
+  student: string;
+  admin: string;
+}
+
+export type LayoutBaseComponent<
+  _RoleType_ = BaseRoleType,
+  _UserInfo_ extends UserInfoT<_RoleType_> = UserInfoT<_RoleType_>,
+  _NavProps_ extends NavBaseProps = NavBaseProps
+> = (props: BaseLayoutProps<_RoleType_, _UserInfo_, _NavProps_>) => JSX.Element;
+
+export interface BaseLayoutProps<
+  _RoleType_ = BaseRoleType,
+  _UserInfo_ extends UserInfoT<_RoleType_> = UserInfoT<_RoleType_>,
+  _NavProps_ extends NavBaseProps = NavBaseProps
 > extends LiteUserInfoProps<_RoleType_, _UserInfo_> {
   logoProps: MainLogoProps;
   children: React.ReactNode;
@@ -23,11 +35,7 @@ interface Props<
   onNavChange: (value: string) => void;
 }
 
-function AppBaseLayout<
-  _RoleType_,
-  _UserInfo_ extends UserInfoT<_RoleType_>,
-  _NavProps_ extends NavBaseProps
->({
+export const AppBaseLayout: LayoutBaseComponent = ({
   onLogin,
   roleMap,
   userInfo,
@@ -36,7 +44,9 @@ function AppBaseLayout<
   navValue,
   children,
   onNavChange,
-}: Props<_RoleType_, _UserInfo_, _NavProps_>) {
+  onUserAction,
+  className,
+}) => {
   return (
     <Root>
       <AppTopNav logoProps={logoProps}>
@@ -55,15 +65,15 @@ function AppBaseLayout<
             onLogin={onLogin}
             roleMap={roleMap}
             userInfo={userInfo}
+            onUserAction={onUserAction}
+            className={className}
           />
         </div>
       </AppTopNav>
       {children}
     </Root>
   );
-}
-
-export default AppBaseLayout;
+};
 
 const Root = styled.div(({ theme }) => ({
   width: "100%",
