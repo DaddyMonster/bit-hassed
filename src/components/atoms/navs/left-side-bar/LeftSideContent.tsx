@@ -24,6 +24,7 @@ export interface LeftSideContentProps<
   headerProps: LeftSideHeaderProps;
   listItems: _ListItem_[];
   footerElem?: React.ReactNode;
+  selectedArg: any;
 }
 
 export function LeftSideContent<
@@ -33,6 +34,7 @@ export function LeftSideContent<
   headerProps,
   listItems,
   footerElem,
+  selectedArg,
 }: LeftSideContentProps<_ClickArg_, _ListItem_>) {
   return (
     <div className="w-full h-full">
@@ -40,24 +42,25 @@ export function LeftSideContent<
       <DividerWrap>
         <Divider />
       </DividerWrap>
-      <ContentWrap hasFooter={Boolean(footerElem)}>
-        <Scrollbar>
+      <Scrollbar>
+        <ContentWrap hasFooter={Boolean(footerElem)}>
           {listItems.map((item) => (
             <SideNavItem
+              selected={selectedArg === item.onClickArg}
               key={item.label}
               label={item.label}
               onClick={(e) => item.onClick(e, item.onClickArg)}
             />
           ))}
-        </Scrollbar>
-      </ContentWrap>
+        </ContentWrap>
+      </Scrollbar>
       {footerElem && <SideFooter>{footerElem}</SideFooter>}
     </div>
   );
 }
 
 const DividerWrap = styled.div(({ theme }) => ({
-  heigt: LEFT_SIDE_DIVIDER_HEIGHT,
+  height: LEFT_SIDE_DIVIDER_HEIGHT,
   padding: theme.spacing(0, 1),
 }));
 
@@ -66,7 +69,6 @@ const ContentWrap = styled.div<{ hasFooter: boolean }>(
     const SUBTRACT_HEIGHT =
       LEFT_SIDE_HEADER_HEIGHT + (hasFooter ? LEFT_SIDE_FOOTER_HEIGHT : 0);
     return {
-      width: "100%",
       height: `calc(100% - ${SUBTRACT_HEIGHT}px)`,
       padding: theme.spacing(3, 2),
     };

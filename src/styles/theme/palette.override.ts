@@ -47,12 +47,12 @@ declare module "@material-ui/core/styles/createPalette" {
 export const createGradient: CreateGradient = (theme) => {
   return function (ops, dir = "to right") {
     const stringifiedArr = ops.map((x, i) => {
-      const { color: _color, op = 1, perc = "50%" } = x;
+      const { color: _color, op = 1, perc = "" } = x;
       const color =
         op < 1
           ? alpha(theme.palette[_color].main, op)
           : theme.palette[_color].main;
-      return `${color}${i === ops.length - 1 ? "" : ","} ${perc}`;
+      return `${color}${perc}${i === ops.length - 1 ? "" : ","}`;
     });
     return `linear-gradient(${dir}, ${stringifiedArr.join(" ")} )`;
   };

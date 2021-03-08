@@ -39,6 +39,7 @@ export const LogoTypo = styled(JustTypo).attrs({
   position: "relative",
   display: "inline-block",
   marginBottom: 15,
+  textShadow: `0 0 2px #fff`,
 }));
 
 export const LogoSubTypo = styled(JustTypo).attrs({ ff: "pretty2", sz: "xs" })<{

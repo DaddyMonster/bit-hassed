@@ -1,7 +1,7 @@
 import { TextFieldProps } from "@material-ui/core";
 import { red } from "@material-ui/core/colors";
 import { useField } from "formik";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { JustTypo } from "../atoms";
 import { JustTextField } from "../atoms/input";
@@ -11,6 +11,7 @@ interface Props {
   textFieldProps?: TextFieldProps;
   label: string;
   placeholder?: string;
+  removeErrorIf?: string;
 }
 
 export const FormTextField = ({
@@ -18,13 +19,30 @@ export const FormTextField = ({
   textFieldProps,
   label,
   placeholder,
+  removeErrorIf,
 }: Props) => {
-  const [props, meta] = useField(name);
+  const [{ onChange, ...props }, meta, { setError }] = useField(name);
+
+  const removeErrRef = useRef(false);
+  useEffect(() => {
+    if (meta.error === removeErrorIf) {
+      removeErrRef.current = true;
+    }
+  }, [props.value, removeErrorIf, meta.error]);
+
+  const handleChange = (e: React.ChangeEvent) => {
+    if (removeErrRef.current) {
+      setError(undefined);
+    }
+    onChange(e);
+  };
+
   return (
     <Root>
       <JustTextField
         {...textFieldProps}
         {...props}
+        onChange={handleChange}
         error={Boolean(meta.error)}
         label={label}
         placeholder={placeholder}

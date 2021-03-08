@@ -19,7 +19,7 @@ export const AppTopNav = ({ logoProps, children }: TopNavProps) => {
 };
 
 const Root = styled(Paper).attrs({ elavation: 5 })(({ theme }) => ({
-  width: "100vw",
+  width: "100%",
   height: APP_TOP_NAV_HEIGHT,
   display: "flex",
   alignItems: "center",

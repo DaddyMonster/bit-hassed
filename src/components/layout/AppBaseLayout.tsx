@@ -11,10 +11,10 @@ import {
   UserInfoT,
 } from "../atoms/navs";
 
-interface BaseRoleType {
-  teacher: string;
-  student: string;
-  admin: string;
+enum BaseRoleType {
+  Teacher = "teacher",
+  Student = "student",
+  Admin = "admin",
 }
 
 export type LayoutBaseComponent<

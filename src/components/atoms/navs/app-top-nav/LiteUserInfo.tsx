@@ -8,6 +8,7 @@ export interface UserInfoT<_RoleType_> {
   username: string;
   role: keyof _RoleType_;
   academyId: string;
+  academyName: string;
   thumbUrl?: string;
 }
 
@@ -44,7 +45,7 @@ export function LiteUserInfo<
               roleMap[userInfo.role]
             }`}</JustTypo>
             <JustTypo ff="guide" sz="xs" grey={500}>
-              {userInfo.academyId}
+              {userInfo.academyName}
             </JustTypo>
           </div>
         </div>
