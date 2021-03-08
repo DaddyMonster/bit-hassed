@@ -61,7 +61,7 @@ const Wrapper = styled.div<{
 const NavItem = styled(JustTypo)<{ selected: boolean }>(
   ({ theme, selected }) => ({
     position: "relative",
-    color: selected ? theme.palette.primary.main : theme.palette.grey[400],
+    color: selected ? theme.palette.primary.main : theme.palette.grey[700],
     overflow: "hidden",
     "&:before": {
       content: "''",
